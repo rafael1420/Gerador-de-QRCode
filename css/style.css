@@ -28,6 +28,7 @@ body {
     border-radius: 10px; /* Suaviza as bordas */
     padding: 20px;
     transition: 0.2s; /* Suaviza mudanças visuais */
+    text-align: center; /*Corrigido o alinhamento do texto*/
 }
 
 .container.active {

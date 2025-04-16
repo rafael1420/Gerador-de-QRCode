@@ -24,6 +24,12 @@ qrCodeBtn.addEventListener("click", () => {
 generateQrCode()
 })
 
+qrCodeInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') { // Verifica se a tecla pressionada é Enter
+        generateQrCode();
+    }
+}); /*ADICIONADO: Função de "Enter", acionando o butão de gerar o QRcode*/
+
 //Limpar QR Input
 qrCodeInput.addEventListener('keyup', () => {
     if(!qrCodeInput.value) {

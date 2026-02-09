@@ -1,105 +1,112 @@
 /* Estilização da imagem do QR Code */
 #qr-code img {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 15px;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto, sans-serif; /* Adiciona fallback para fontes genéricas */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Estilização do corpo da página */
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Mantém o conteúdo centralizado na tela */
+    height: 100vh;
     background-color: rgb(168, 184, 184);
 }
 
-/* Container principal do QR Code */
 .container {
     background-color: aliceblue;
-    height: 260px;
+    height: 270px;
     width: 400px;
-    border-radius: 10px; /* Suaviza as bordas */
-    padding: 20px;
-    transition: 0.2s; /* Suaviza mudanças visuais */
-    text-align: center; /*Corrigido o alinhamento do texto*/
+    border-radius: 10px;
+    padding: 30px;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .container.active {
-    height: 500px;
+    height: 560px; /* Altura suficiente para imagem + botão */
 }
 
-
-
-#qr-header {
-    text-align: center;
-}
-
-
-#qr-header h1 {
+.qr-header h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-
-#qr-header p {
-    color: #444;
+.qr-header p {
+    color: #555;
     font-size: 0.9rem;
 }
-/*Formulário*/
 
+/* Formulário */
 #qr-form {
-    margin: 20px 15px;
+    margin-top: 20px;
 }
+
 #qr-form input,
-#qr-form button {
+#qr-form button,
+#download-btn {
     width: 100%;
-    height: 55px;
+    height: 50px;
     border: none;
     border-radius: 5px;
-    font-size: 0.9rem;
-
+    font-size: 1rem;
+    transition: 0.3s;
 }
 
 #qr-form input {
-    border: 1px solid #777;
+    border: 1px solid #ccc;
     padding: 10px 15px;
+    margin-bottom: 10px;
 }
 
 #qr-form button {
     background-color: rgb(44, 128, 90);
     color: aliceblue;
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-weight: bold;
     cursor: pointer;
-    opacity: 0.9;
-    transition: 0.4s;
-
 }
 
-#qr-form button:hover {
-    opacity: 1;
-}
-
-/*QR CODE*/
-#qr-code {
+/* Estilo específico do botão de Download */
+#download-btn {
+    background-color: #444; /* Cor neutra para diferenciar do botão de gerar */
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    margin-top: 10px;
+    text-decoration: none;
     display: flex;
-    opacity: 0;
-    border: 1px solid #ccc;
-    padding: 30px 0;
-    margin: 20px 2px;
-    display: flex;
+    align-items: center;
     justify-content: center;
-    border-radius: 4px;
+}
+
+#qr-form button:hover, 
+#download-btn:hover {
+    filter: brightness(1.2);
+}
+
+#qr-code {
+    opacity: 0;
+    pointer-events: none;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: 0.5s;
 }
 
 .container.active #qr-code {
     opacity: 1;
+    pointer-events: all;
+}
+
+.container.active #download-btn {
+    display: flex;
 }
